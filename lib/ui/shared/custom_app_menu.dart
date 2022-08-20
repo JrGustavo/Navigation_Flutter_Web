@@ -1,7 +1,8 @@
-import 'package:bases_web/services/navigator_service.dart';
 import 'package:bases_web/ui/shared/custom_flat_button.dart';
 import 'package:flutter/material.dart';
+
 import '../../locator.dart';
+import '../../services/navigator_service.dart';
 
 class CustomAppMenu extends StatelessWidget {
   @override
@@ -46,11 +47,27 @@ class _TableDesktopMenu extends StatelessWidget {
             onPressed: () => locator<NavigationService>().navigateTo('/abc123'),
             color: Colors.black,
           ),
+
+          SizedBox( width: 10 ),
+          CustomFlatButton(
+            text: 'Stateful 100',
+            onPressed: () => locator<NavigationService>().navigateTo('/stateful/100'),
+            color: Colors.black,
+          ),
+
+          SizedBox( width: 10 ),
+          CustomFlatButton(
+            text: 'Provider 200',
+            onPressed: () => locator<NavigationService>().navigateTo('/provider?q=200'),
+            color: Colors.black,
+          ),
+
         ],
       ),
     );
   }
 }
+
 class _MobileMenu extends StatelessWidget {
 
   @override

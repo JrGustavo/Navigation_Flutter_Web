@@ -1,7 +1,16 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class CounterProvider extends ChangeNotifier{
-  int _counter = 16 ;
+    int _counter = 16 ;
+
+    CounterProvider( String base ) {
+    if(int.tryParse(base) != null)
+        this._counter = int.parse(base);
+        
+    }
+
 
 get counter => this._counter;
 
