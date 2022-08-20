@@ -22,9 +22,9 @@ class CustomFlatButton extends StatelessWidget {
       ),
       onPressed: ()=>onPressed(),
 
-      child: const Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Text('Incrementar')),
+      child:  Padding(
+          padding: const  EdgeInsets.all(10.0),
+          child: Text(text)),
     );
   }
 }

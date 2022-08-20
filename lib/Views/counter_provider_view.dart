@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import  'package:provider/provider.dart';
 import 'package:bases_web/providers/counter_provider.dart';
-import 'package:bases_web/ui/pages/custom_app_menu.dart';
 import '../ui/shared/custom_flat_button.dart';
 
 
@@ -11,13 +10,13 @@ class CounterProviderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
         create:( _) => CounterProvider(),
-        child: _CounterProviderPageBody()
+        child: _CounterProviderPageView()
     );
 
   }
 }
 
-class _CounterProviderPageBody extends StatelessWidget{
+class _CounterProviderPageView extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +27,7 @@ class _CounterProviderPageBody extends StatelessWidget{
       mainAxisAlignment: MainAxisAlignment.center ,
       children: [
 
-        CustomAppMenu(),
-        Spacer(),
-
-        const Text('Contador Provider', style: TextStyle(fontSize:20)),
+        Text('Contador Provider', style: TextStyle( fontSize: 20 )),
 
         FittedBox(
           fit: BoxFit.contain,
@@ -48,17 +44,16 @@ class _CounterProviderPageBody extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomFlatButton(
-                text: 'Decrementar',
+                text: 'Incrementar',
                 onPressed: () => counterProvider.increment()
             ),
 
             CustomFlatButton(
-                text: 'Incrementar',
-                onPressed: () => counterProvider.increment()
+                text: 'Decrementar',
+                onPressed: () => counterProvider.decrement()
             )
           ],
         ),
-        Spacer(),
       ],
     );
   }

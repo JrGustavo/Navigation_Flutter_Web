@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:bases_web/ui/pages/counter_page.dart';
 import '../ui/pages/counter_provider_page.dart';

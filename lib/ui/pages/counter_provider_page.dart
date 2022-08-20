@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import  'package:provider/provider.dart';
 import 'package:bases_web/providers/counter_provider.dart';
-import 'package:bases_web/ui/pages/custom_app_menu.dart';
+import '../shared/custom_app_menu.dart';
 import '../shared/custom_flat_button.dart';
 
 
@@ -19,6 +19,7 @@ class CounterProviderPage extends StatelessWidget {
 
 class _CounterProviderPageBody extends StatelessWidget{
 
+
   @override
   Widget build(BuildContext context) {
 
@@ -30,9 +31,10 @@ class _CounterProviderPageBody extends StatelessWidget{
         children: [
 
           CustomAppMenu(),
+
           Spacer(),
 
-          const Text('Contador Provider', style: TextStyle(fontSize:20)),
+           Text('Contador Provider', style: TextStyle(fontSize:20)),
 
           FittedBox(
             fit: BoxFit.contain,
@@ -49,13 +51,13 @@ class _CounterProviderPageBody extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomFlatButton(
-                  text: 'Decrementar',
+                  text: 'Incrementar',
                   onPressed: () => counterProvider.increment()
               ),
 
               CustomFlatButton(
-                  text: 'Incrementar',
-                  onPressed: () => counterProvider.increment()
+                  text: 'Decrementar',
+                  onPressed: () => counterProvider.decrement()
               )
             ],
           ),

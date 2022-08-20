@@ -1,11 +1,11 @@
-import 'package:bases_web/ui/pages/custom_app_menu.dart';
 import 'package:flutter/material.dart';
+import '../ui/shared/custom_app_menu.dart';
 import '../ui/shared/custom_flat_button.dart';
 
 
 class CounterView extends StatefulWidget {
   @override
-  State<CounterView> createState() => _CounterViewState();
+  _CounterViewState createState() => _CounterViewState();
 }
 
 class _CounterViewState extends State<CounterView> {
@@ -17,13 +17,8 @@ class _CounterViewState extends State<CounterView> {
       mainAxisAlignment: MainAxisAlignment.center ,
       children: [
 
-        CustomAppMenu(),
-        Spacer(),
 
-        const Text('Contador Stateful', style: TextStyle(fontSize:20)),
-
-
-
+         Text('Contador Stateful', style: TextStyle(fontSize:20)),
 
 
         FittedBox(
@@ -41,17 +36,16 @@ class _CounterViewState extends State<CounterView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomFlatButton(
-                text: 'Decrementar',
+                text: 'Incrementar',
                 onPressed: () => setState(() => Counter++)
             ),
 
             CustomFlatButton(
-                text: 'Incrementar',
+                text: 'Decrementar',
                 onPressed: () => setState(() => Counter--)
             )
           ],
         ),
-        Spacer(),
       ],
     );
   }

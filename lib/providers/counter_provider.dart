@@ -10,11 +10,12 @@ get counter => this._counter;
     notifyListeners();
     }
 
-    void Decremento(){
+    void decrement(){
     this._counter--;
     notifyListeners();
 
     }
+
 
 
 }
